@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.lotus.MainActivity">
+    <item
+        android:id="@+id/theme_switch"
+        android:title="@string/dark_mode_label"
+        android:titleCondensed="@string/dark_mode_label"
+        android:tooltipText="@string/dark_mode_label"
+        app:actionLayout="@layout/switch_item"
+        app:showAsAction="always" />
+</menu>
