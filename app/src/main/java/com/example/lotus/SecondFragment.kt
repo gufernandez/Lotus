@@ -1,24 +1,13 @@
 package com.example.lotus
 
-import android.content.res.Resources
-import android.graphics.Color
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
-import androidx.annotation.RawRes
-import androidx.appcompat.content.res.AppCompatResources
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.lotus.databinding.FragmentSecondBinding
-import java.io.File
-import java.nio.channels.AsynchronousFileChannel.open
-import java.nio.channels.AsynchronousServerSocketChannel.open
-import java.nio.channels.Pipe.open
-import java.nio.file.Files
-import java.nio.file.Paths
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
@@ -31,6 +20,7 @@ class SecondFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
     private lateinit var countryValues: List<String>
+    private val helpers = Helper()
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -66,12 +56,7 @@ class SecondFragment : Fragment() {
     }
 
     private fun newCountry(countryView: TextView) {
-        countryValues = readCountriesFile().split(",")
+        countryValues = helpers.getRandomCountryList(resources).split(",")
         countryView.text = countryValues[0]
     }
-
-    private fun readCountriesFile() = resources.getRawTextFileRandomLine(R.raw.paises)
-
-    private fun Resources.getRawTextFileRandomLine(@RawRes id: Int) =
-        openRawResource(id).bufferedReader().use { it.readLines().random() }
 }

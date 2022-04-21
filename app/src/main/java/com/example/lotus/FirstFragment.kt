@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.navigation.fragment.findNavController
 import com.example.lotus.databinding.FragmentFirstBinding
 
@@ -34,6 +33,10 @@ class FirstFragment : Fragment() {
 
         binding.capitalsButton.setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+        }
+
+        binding.telepathyButton.setOnClickListener {
+            findNavController().navigate(R.id.action_FirstFragment_to_telepathyFragment)
         }
     }
 
