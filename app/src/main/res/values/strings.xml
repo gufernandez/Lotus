@@ -12,6 +12,9 @@
     <string name="music_label">Música</string>
     <string name="exit_label">Sair</string>
 
+    <!-- Musica -->
+    <string name="english_enabled">Palavras em Inglês</string>
+
     <string name="first_fragment_label">Tela de Início</string>
     <string name="capitals_fragment_label">Jogo das Capitais</string>
     <string name="telepathy_fragment_label">Jogo da Telepatia</string>

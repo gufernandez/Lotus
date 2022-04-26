@@ -19,6 +19,8 @@ class Helper {
 
     fun getRandomBigWord(resources: Resources) = capitalizeFirstLetter(resources.getRawTextFileRandomLine(R.raw.grandes))
 
+    fun getRandomEngWord(resources: Resources) = capitalizeFirstLetter(resources.getRawTextFileRandomLine(R.raw.words))
+
     private fun Resources.getRawTextFileRandomLine(@RawRes id: Int) =
         openRawResource(id).bufferedReader().use { it.readLines().random() }
 
