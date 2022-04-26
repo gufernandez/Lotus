@@ -18,7 +18,6 @@ por
 quente
 palavra
 mas
-o-que
 algum
 nós
 pode
@@ -27,7 +26,6 @@ outro
 eram
 todo
 quando
-para-cima
 usar
 seu
 como
@@ -108,7 +106,7 @@ nosso
 sob
 nome
 muito
-através-de
+através
 justo
 forma
 sentença

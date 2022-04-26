@@ -12,28 +12,50 @@
         tools:layout="@layout/fragment_first">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_FirstFragment_to_CapitalsFragment"
+            app:destination="@id/CapitalsFragment" />
         <action
-            android:id="@+id/action_FirstFragment_to_telepathyFragment"
-            app:destination="@id/telepathyFragment" />
+            android:id="@+id/action_FirstFragment_to_TelepathyFragment"
+            app:destination="@id/TelepathyFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_JogralFragment"
+            app:destination="@id/JogralFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_WordFragment"
+            app:destination="@id/WordFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.lotus.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        android:id="@+id/CapitalsFragment"
+        android:name="com.example.lotus.CapitalsFragment"
+        android:label="@string/capitals_fragment_label"
+        tools:layout="@layout/fragment_capitals">
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            android:id="@+id/action_CapitalsFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
     <fragment
-        android:id="@+id/telepathyFragment"
+        android:id="@+id/TelepathyFragment"
         android:name="com.example.lotus.TelepathyFragment"
-        android:label="TelepathyFragment" >
+        android:label="@string/telepathy_fragment_label">
         <action
             android:id="@+id/action_telepathyFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/JogralFragment"
+        android:name="com.example.lotus.JogralFragment"
+        android:label="@string/jogral_fragment_label">
+        <action
+            android:id="@+id/action_JogralFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/WordFragment"
+        android:name="com.example.lotus.WordFragment"
+        android:label="@string/word_fragment_label">
+        <action
+            android:id="@+id/action_WordFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
 </navigation>

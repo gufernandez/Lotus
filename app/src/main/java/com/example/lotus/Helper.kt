@@ -2,6 +2,7 @@ package com.example.lotus
 
 import android.content.res.Resources
 import androidx.annotation.RawRes
+import java.util.*
 
 class Helper {
     fun getRandomCountryList(resources: Resources) = resources.getRawTextFileRandomLine(R.raw.paises)
@@ -12,8 +13,16 @@ class Helper {
 
     fun getRandomColor(resources: Resources) = resources.getRawTextFileRandomLine(R.raw.cores)
 
-    fun getRandomWord(resources: Resources) = resources.getRawTextFileRandomLine(R.raw.palavras)
+    fun getRandomWord(resources: Resources) = capitalizeFirstLetter(resources.getRawTextFileRandomLine(R.raw.palavras))
+
+    fun getRandomAnimal(resources: Resources) = resources.getRawTextFileRandomLine(R.raw.animais)
+
+    fun getRandomBigWord(resources: Resources) = capitalizeFirstLetter(resources.getRawTextFileRandomLine(R.raw.grandes))
 
     private fun Resources.getRawTextFileRandomLine(@RawRes id: Int) =
         openRawResource(id).bufferedReader().use { it.readLines().random() }
+
+    private fun capitalizeFirstLetter(word: String) = word.replaceFirstChar {
+        if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString()
+    }
 }

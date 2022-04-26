@@ -6,24 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".FirstFragment">
 
-    <Button
-        android:id="@+id/capitals_button"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="@string/capitals_label"
-        app:layout_constraintBottom_toTopOf="@+id/telepathy_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <TextView
         android:id="@+id/homeTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
         android:text="@string/home_title_text"
-        android:textAlignment="textStart"
+        android:textAlignment="center"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,12 +20,55 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/capitals_button"
+        android:layout_width="@dimen/home_button_width"
+        android:layout_height="@dimen/home_button_height"
+        android:text="@string/capitals_label"
+        app:layout_constraintBottom_toTopOf="@+id/exit_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/homeTitle"
+        app:layout_constraintVertical_bias="0.19" />
+
+    <Button
         android:id="@+id/telepathy_button"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/home_button_width"
+        android:layout_height="@dimen/home_button_height"
+        android:layout_marginTop="10dp"
         android:text="@string/telepathy_label"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/capitals_button" />
+
+    <Button
+        android:id="@+id/jogral_button"
+        android:layout_width="@dimen/home_button_width"
+        android:layout_height="@dimen/home_button_height"
+        android:layout_marginTop="10dp"
+        android:text="@string/jogral_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/telepathy_button" />
+
+    <Button
+        android:id="@+id/exit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="52dp"
+        android:text="@string/exit_label"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/music_button"
+        android:layout_width="@dimen/home_button_width"
+        android:layout_height="@dimen/home_button_height"
+        android:layout_marginTop="10dp"
+        android:text="@string/music_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jogral_button" />
 </androidx.constraintlayout.widget.ConstraintLayout>

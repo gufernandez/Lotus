@@ -52,7 +52,7 @@ class TelepathyFragment : Fragment() {
     }
 
     private fun newWords(firstWord: TextView, secondWord: TextView) {
-        val randomNumber = (0..2).random()
+        val randomNumber = (0..3).random()
 
         firstWord.text = getRandomWord(randomNumber)
         secondWord.text = getRandomWord(randomNumber)
@@ -63,13 +63,9 @@ class TelepathyFragment : Fragment() {
             0 -> return helper.getRandomCountry(resources)
             1 -> return helper.getRandomFruit(resources)
             2 -> return helper.getRandomColor(resources)
+            3 -> return helper.getRandomAnimal(resources)
         }
 
         return ""
     }
-
-    private fun readWordsFile() = resources.getRawTextFileRandomLine(R.raw.palavras)
-
-    private fun Resources.getRawTextFileRandomLine(@RawRes id: Int) =
-        openRawResource(id).bufferedReader().use { it.readLines().random() }
 }

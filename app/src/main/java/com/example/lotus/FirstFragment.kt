@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.lotus.databinding.FragmentFirstBinding
+import kotlin.system.exitProcess
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -32,11 +33,23 @@ class FirstFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.capitalsButton.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+            findNavController().navigate(R.id.action_FirstFragment_to_CapitalsFragment)
         }
 
         binding.telepathyButton.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_telepathyFragment)
+            findNavController().navigate(R.id.action_FirstFragment_to_TelepathyFragment)
+        }
+
+        binding.jogralButton.setOnClickListener {
+            findNavController().navigate(R.id.action_FirstFragment_to_JogralFragment)
+        }
+
+        binding.musicButton.setOnClickListener {
+            findNavController().navigate(R.id.action_FirstFragment_to_WordFragment)
+        }
+
+        binding.exitButton.setOnClickListener {
+            exitProcess(-1)
         }
     }
 
