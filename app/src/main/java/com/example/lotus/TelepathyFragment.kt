@@ -31,16 +31,17 @@ class TelepathyFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val randomNumber = (0..2).random()
-
         val firstWord = view.findViewById<TextView>(R.id.first_word)
         val secondWord = view.findViewById<TextView>(R.id.second_word)
 
-        firstWord.text = getRandomWord(randomNumber)
-        secondWord.text = getRandomWord(randomNumber)
+        newWords(firstWord, secondWord)
 
         binding.backButton.setOnClickListener {
             findNavController().navigate(R.id.action_telepathyFragment_to_FirstFragment)
+        }
+
+        binding.nextButtonTelepathy.setOnClickListener {
+            newWords(firstWord, secondWord)
         }
 
     }
@@ -48,6 +49,13 @@ class TelepathyFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun newWords(firstWord: TextView, secondWord: TextView) {
+        val randomNumber = (0..2).random()
+
+        firstWord.text = getRandomWord(randomNumber)
+        secondWord.text = getRandomWord(randomNumber)
     }
 
     private fun getRandomWord(id: Number): String {

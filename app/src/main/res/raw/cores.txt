@@ -33,7 +33,7 @@ Magenta
 Marfim
 Marrom
 Ouro
-Prata, prateado
+Prata
 Preto
 Rosa
 Rosa-magenta

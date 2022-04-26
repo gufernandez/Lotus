@@ -6,20 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/Theme.Lotus">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:background="@color/md_theme_dark_inversePrimary"
-            app:popupTheme="@style/Theme.Lotus" />
-
-    </com.google.android.material.appbar.AppBarLayout>
-
     <include
         layout="@layout/content_main"
         android:background="#B54949" />

@@ -1,10 +1,12 @@
 package com.example.lotus
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.lotus.databinding.FragmentSecondBinding
@@ -21,11 +23,12 @@ class SecondFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var countryValues: List<String>
     private val helpers = Helper()
+    private var showingCapital = false
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         _binding = FragmentSecondBinding.inflate(inflater, container, false)
         return binding.root
@@ -42,11 +45,21 @@ class SecondFragment : Fragment() {
         }
 
         binding.answerButton.setOnClickListener {
-            countryViewName.text = countryValues[1]
+            showingCapital = showingCapital.not()
+
+            if (showingCapital) {
+                countryViewName.setTextColor(Color.GREEN)
+                countryViewName.text = countryValues[1]
+            } else {
+                countryViewName.setTextColor(Color.BLACK)
+                countryViewName.text = countryValues[0]
+            }
         }
 
         binding.nextButton.setOnClickListener {
+            showingCapital = false
             newCountry(countryViewName)
+            countryViewName.setTextColor(Color.BLACK)
         }
     }
 
