@@ -10,6 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="288dp"
+        android:gravity="center"
         android:text="Teste"
         android:textSize="@dimen/words_size"
         app:layout_constraintBottom_toTopOf="@+id/return_button_jogral"

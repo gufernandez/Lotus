@@ -10,6 +10,7 @@
     <string name="capitals_label">Capitais</string>
     <string name="jogral_label">Jogral</string>
     <string name="music_label">Música</string>
+    <string name="cards_label">Cartas</string>
     <string name="exit_label">Sair</string>
 
     <!-- Musica -->
@@ -20,6 +21,18 @@
     <string name="telepathy_fragment_label">Jogo da Telepatia</string>
     <string name="jogral_fragment_label">Jogo do Jogral</string>
     <string name="word_fragment_label">Jogo da Música</string>
+    <string name="cards_fragment_label">Tela de Cartas</string>
+    <string name="game_fragment_label">Carta de Jogo</string>
+    <string name="duel_fragment_label">Carta de Duelo</string>
+
+    <!-- Cartas -->
+    <string name="game_label">Carta de Jogo</string>
+    <string name="duel_label">Carta de Duelo</string>
+    <string name="dice_label">Dados</string>
+    <string name="games_screen_label">Tela de Jogos</string>
+    <string name="buy_card_label">Compra Carta</string>
+    <string name="go_to_game_label">Abrir Jogo</string>
+    <string name="team_label">Jogo em Equipe?</string>
 
     <!-- Tela Capitais -->
     <string name="answer_label">Resposta</string>

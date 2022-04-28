@@ -23,6 +23,23 @@
         <action
             android:id="@+id/action_FirstFragment_to_WordFragment"
             app:destination="@id/WordFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_CardsFragment"
+            app:destination="@id/CardsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/CardsFragment"
+        android:name="com.example.lotus.CardsFragment"
+        android:label="@string/cards_fragment_label">
+        <action
+            android:id="@+id/action_CardsFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_CardsFragment_to_GameFragment"
+            app:destination="@id/GameFragment" />
+        <action
+            android:id="@+id/action_CardsFragment_to_DuelFragment"
+            app:destination="@id/DuelFragment" />
     </fragment>
     <fragment
         android:id="@+id/CapitalsFragment"
@@ -57,5 +74,45 @@
         <action
             android:id="@+id/action_WordFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/GameFragment"
+        android:name="com.example.lotus.GameFragment"
+        android:label="@string/game_fragment_label">
+        <action
+            android:id="@+id/action_GameFragment_to_CardsFragment"
+            app:destination="@id/CardsFragment" />
+        <action
+            android:id="@+id/action_GameFragment_to_CapitalsFragment"
+            app:destination="@id/CapitalsFragment" />
+        <action
+            android:id="@+id/action_GameFragment_to_JogralFragment"
+            app:destination="@id/JogralFragment" />
+        <action
+            android:id="@+id/action_GameFragment_to_TelepathyFragment"
+            app:destination="@id/TelepathyFragment" />
+        <action
+            android:id="@+id/action_GameFragment_to_WordFragment"
+            app:destination="@id/WordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/DuelFragment"
+        android:name="com.example.lotus.DuelFragment"
+        android:label="@string/duel_fragment_label">
+        <action
+            android:id="@+id/action_DuelFragment_to_CardsFragment"
+            app:destination="@id/CardsFragment" />
+        <action
+            android:id="@+id/action_DuelFragment_to_CapitalsFragment"
+            app:destination="@id/CapitalsFragment" />
+        <action
+            android:id="@+id/action_DuelFragment_to_JogralFragment"
+            app:destination="@id/JogralFragment" />
+        <action
+            android:id="@+id/action_DuelFragment_to_TelepathyFragment"
+            app:destination="@id/TelepathyFragment" />
+        <action
+            android:id="@+id/action_DuelFragment_to_WordFragment"
+            app:destination="@id/WordFragment" />
     </fragment>
 </navigation>
