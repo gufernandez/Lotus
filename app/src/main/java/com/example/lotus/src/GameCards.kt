@@ -7,12 +7,12 @@ class GameCards {
         Card("Capitais", R.id.action_GameFragment_to_CapitalsFragment, false),
         Card("Telepatia Time", R.id.action_GameFragment_to_TelepathyFragment, true),
         Card("Telepatia Versus", R.id.action_GameFragment_to_TelepathyFragment, false),
-        Card("Jogral Time", R.id.action_GameFragment_to_JogralFragment, true),
-        Card("Jogral Versus", R.id.action_GameFragment_to_JogralFragment, true),
+        Card("Jogral", R.id.action_GameFragment_to_JogralFragment, false),
         Card("Música", R.id.action_GameFragment_to_WordFragment, false),
         Card("Música Versus", R.id.action_GameFragment_to_WordFragment, false),
-        Card("Jokenpô", null, false),
-        Card("Cham Cham Cham", null, false)
+        Card("Jokenpô Menos Um", null, false),
+        Card("Cham Cham Cham", null, false),
+        Card("Jogo do Pi", null, false)
     )
 
     private val duelCards = arrayOf(
@@ -23,7 +23,12 @@ class GameCards {
     )
 
     fun getRandomGameCard(isTeam: Boolean): Card {
-        val cards = gameCards.filter { it.isTeam == isTeam }
+        var cards = gameCards
+
+        if (!isTeam) {
+            cards = cards.filter { !it.isTeam }.toTypedArray()
+        }
+
         val cardN = cards.size -1
 
         return cards[getRandomIndex(cardN)]

@@ -42,6 +42,9 @@ class JogralFragment : Fragment() {
         binding.returnButtonJogral.setOnClickListener {
             findNavController().navigate(R.id.action_JogralFragment_to_FirstFragment)
         }
+        binding.cardsButton.setOnClickListener {
+            findNavController().navigate(R.id.action_JogralFragment_to_GameFragment)
+        }
 
     }
 

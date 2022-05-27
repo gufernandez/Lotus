@@ -43,6 +43,10 @@ class CapitalsFragment : Fragment() {
             findNavController().navigate(R.id.action_CapitalsFragment_to_FirstFragment)
         }
 
+        binding.cardsButton.setOnClickListener {
+            findNavController().navigate(R.id.action_CapitalsFragment_to_GameFragment)
+        }
+
         binding.answerButton.setOnClickListener {
             showingCapital = showingCapital.not()
 

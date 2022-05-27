@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.lotus.databinding.FragmentWordBinding
+import com.example.lotus.src.SharedPreference
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
@@ -20,6 +21,7 @@ class WordFragment : Fragment() {
     private val binding get() = _binding!!
     private val helper: Helper = Helper()
     private val maxMilSecs: Long = 11000
+    private val englishKeyName = "englishMode"
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -31,8 +33,10 @@ class WordFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val sharedPreference = SharedPreference(requireContext())
+        var englishEnabled = sharedPreference.getValueBoolean(englishKeyName, false)
         val wordView = view.findViewById<TextView>(R.id.word)
-        var englishEnabled = binding.englishEnabled.isChecked
         val progressBar = binding.timeBar
         val secondsLabel = binding.secondsLabel
 
@@ -50,13 +54,24 @@ class WordFragment : Fragment() {
         newWord(wordView, englishEnabled)
         initTimer(progressBar, secondsLabel, countDownTimer)
 
+        if (englishEnabled) {
+            binding.englishEnabled.toggle()
+        }
+
         binding.englishEnabled.setOnCheckedChangeListener { _ , isChecked ->
             englishEnabled = isChecked
+            sharedPreference.save(englishKeyName, englishEnabled)
         }
+
         binding.nextButton.setOnClickListener {
             newWord(wordView, englishEnabled)
             initTimer(progressBar, secondsLabel, countDownTimer)
         }
+
+        binding.cardsButton.setOnClickListener {
+            findNavController().navigate(R.id.action_WordFragment_to_GameFragment)
+        }
+
         binding.returnButton.setOnClickListener {
             findNavController().navigate(R.id.action_WordFragment_to_FirstFragment)
         }

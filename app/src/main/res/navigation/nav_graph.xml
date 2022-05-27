@@ -50,6 +50,9 @@
         <action
             android:id="@+id/action_CapitalsFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_CapitalsFragment_to_GameFragment"
+            app:destination="@id/GameFragment" />
     </fragment>
     <fragment
         android:id="@+id/TelepathyFragment"
@@ -58,6 +61,9 @@
         <action
             android:id="@+id/action_telepathyFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_TelepathyFragment_to_GameFragment"
+            app:destination="@id/GameFragment" />
     </fragment>
     <fragment
         android:id="@+id/JogralFragment"
@@ -66,6 +72,9 @@
         <action
             android:id="@+id/action_JogralFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_JogralFragment_to_GameFragment"
+            app:destination="@id/GameFragment" />
     </fragment>
     <fragment
         android:id="@+id/WordFragment"
@@ -74,6 +83,9 @@
         <action
             android:id="@+id/action_WordFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_WordFragment_to_GameFragment"
+            app:destination="@id/GameFragment" />
     </fragment>
     <fragment
         android:id="@+id/GameFragment"

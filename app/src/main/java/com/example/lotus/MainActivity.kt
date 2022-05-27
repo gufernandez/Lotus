@@ -6,6 +6,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import com.example.lotus.databinding.ActivityMainBinding
+import com.example.lotus.src.SharedPreference
 
 class MainActivity : AppCompatActivity() {
 

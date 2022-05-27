@@ -40,6 +40,10 @@ class TelepathyFragment : Fragment() {
             findNavController().navigate(R.id.action_telepathyFragment_to_FirstFragment)
         }
 
+        binding.cardsButton.setOnClickListener {
+            findNavController().navigate(R.id.action_TelepathyFragment_to_GameFragment)
+        }
+
         binding.nextButtonTelepathy.setOnClickListener {
             newWords(firstWord, secondWord)
         }
