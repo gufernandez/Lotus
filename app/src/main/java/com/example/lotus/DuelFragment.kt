@@ -21,7 +21,6 @@ class DuelFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
-    private val gameCards = GameCards()
     private val animationTime = 300
 
     override fun onCreateView(
@@ -37,6 +36,7 @@ class DuelFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val gameNameView = view.findViewById<TextView>(R.id.card_name)
+        val gameCards = (activity as MainActivity?)!!.getGameCards()
 
         binding.buyButton.setOnClickListener {
             val animSlideOut = AnimationUtils.loadAnimation(requireContext(),R.anim.slide_out);
@@ -46,7 +46,7 @@ class DuelFragment : Fragment() {
             gameNameView.startAnimation(animSlideOut);
 
             gameNameView.postDelayed({
-                gameNameView.text = duelCard.name
+                gameNameView.text = duelCard
                 gameNameView.startAnimation(animSlideIn)
             }, animationTime.toLong())
         }

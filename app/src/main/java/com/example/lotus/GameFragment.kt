@@ -22,9 +22,8 @@ class GameFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
-    private val gameCards = GameCards()
-    private val teamKeyName = "teamGame"
-    private val animationTime = 300
+    private val competitiveMode = "competitiveMode"
+    private val helpers = Helper()
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -40,16 +39,17 @@ class GameFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val sharedPreference = SharedPreference(requireContext())
-        var teamGame = sharedPreference.getValueBoolean(teamKeyName, false)
+        var competitiveMode = sharedPreference.getValueBoolean(competitiveMode, false)
         val gameNameView = view.findViewById<TextView>(R.id.card_name)
+        val gameCards = (activity as MainActivity?)!!.getGameCards()
 
-        if (teamGame) {
-            binding.teamSwitch.toggle()
+        if (competitiveMode) {
+            binding.competitiveSwitch.toggle()
         }
 
-        binding.teamSwitch.setOnCheckedChangeListener { _ , isChecked ->
-            teamGame = isChecked
-            sharedPreference.save(teamKeyName, teamGame)
+        binding.competitiveSwitch.setOnCheckedChangeListener { _ , isChecked ->
+            competitiveMode = isChecked
+            sharedPreference.save(this.competitiveMode, competitiveMode)
         }
 
         binding.buyButton.setOnClickListener {
@@ -57,8 +57,7 @@ class GameFragment : Fragment() {
             val animSlideIn = AnimationUtils.loadAnimation(requireContext(), R.anim.slide_in);
             binding.gameButton.visibility = View.INVISIBLE
 
-
-            val gameCard = gameCards.getRandomGameCard(teamGame)
+            val gameCard = gameCards.getRandomGameCard(competitiveMode)
             gameNameView.startAnimation(animSlideOut);
 
             gameNameView.postDelayed({
@@ -72,7 +71,7 @@ class GameFragment : Fragment() {
                         findNavController().navigate(gameCard.game)
                     }
                 }
-            }, animationTime.toLong())
+            }, helpers.animationTime.toLong())
         }
 
         binding.exitButton.setOnClickListener {

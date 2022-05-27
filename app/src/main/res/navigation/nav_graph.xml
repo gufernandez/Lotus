@@ -40,6 +40,9 @@
         <action
             android:id="@+id/action_CardsFragment_to_DuelFragment"
             app:destination="@id/DuelFragment" />
+        <action
+            android:id="@+id/action_CardsFragment_to_AddGameFragment"
+            app:destination="@id/AddGameFragment" />
     </fragment>
     <fragment
         android:id="@+id/CapitalsFragment"
@@ -126,5 +129,13 @@
         <action
             android:id="@+id/action_DuelFragment_to_WordFragment"
             app:destination="@id/WordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/AddGameFragment"
+        android:name="com.example.lotus.AddGameFragment"
+        android:label="@string/add_fragment_label">
+        <action
+            android:id="@+id/action_AddGameFragment_to_CardsFragment"
+            app:destination="@id/CardsFragment" />
     </fragment>
 </navigation>

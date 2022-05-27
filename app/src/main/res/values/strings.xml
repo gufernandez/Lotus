@@ -25,16 +25,24 @@
     <string name="word_fragment_label">Jogo da Música</string>
     <string name="cards_fragment_label">Tela de Cartas</string>
     <string name="game_fragment_label">Carta de Jogo</string>
-    <string name="duel_fragment_label">Carta de Duelo</string>
+    <string name="duel_fragment_label">Carta de Prenda</string>
+    <string name="add_fragment_label">Adicione um Jogo</string>
 
     <!-- Cartas -->
     <string name="game_label">Carta de Jogo</string>
-    <string name="duel_label">Carta de Duelo</string>
+    <string name="duel_label">Carta de Prenda</string>
     <string name="dice_label">Dados</string>
     <string name="games_screen_label">Tela de Jogos</string>
     <string name="buy_card_label">Compra Carta</string>
     <string name="go_to_game_label">Abrir Jogo</string>
-    <string name="team_label">Jogo em Equipe?</string>
+    <string name="team_label">Modo Competição</string>
+    <string name="add_game_label">Adicione um Jogo</string>
+
+    <!-- Add Game -->
+    <string name="new_game_placeholder">Nome do Jogo</string>
+    <string name="is_competitive_placeholder">Tem Modo Competitivo?</string>
+    <string name="is_solo_placeholder">Tem Modo Individual?</string>
+    <string name="add_button_label">Adicionar</string>
 
     <!-- Tela Capitais -->
     <string name="answer_label">Resposta</string>

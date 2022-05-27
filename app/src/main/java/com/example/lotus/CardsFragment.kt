@@ -44,6 +44,10 @@ class CardsFragment : Fragment() {
             findNavController().navigate(R.id.action_CardsFragment_to_FirstFragment)
         }
 
+        binding.addGameButton.setOnClickListener {
+            findNavController().navigate(R.id.action_CardsFragment_to_AddGameFragment)
+        }
+
         binding.exitButton.setOnClickListener {
             exitProcess(-1)
         }

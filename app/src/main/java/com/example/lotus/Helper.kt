@@ -5,6 +5,8 @@ import androidx.annotation.RawRes
 import java.util.*
 
 class Helper {
+    val animationTime = 300
+
     fun getRandomCountryList(resources: Resources) = resources.getRawTextFileRandomLine(R.raw.paises)
 
     fun getRandomCountry(resources: Resources) = resources.getRawTextFileRandomLine(R.raw.paises).split(',')[0]
